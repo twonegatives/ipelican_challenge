@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ipelican_testcase
+  pool: 5
+  username: sibles
+  password: siblesdb
