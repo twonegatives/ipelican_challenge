@@ -16,7 +16,7 @@ class Product < ActiveRecord::Base
     
     query                       = ProductProperty.for_defined_product(self).map do |single_property|
                                     "(product_properties.property_id=#{single_property.property_id} AND " +
-                                    ['num_value', 'bool_value', 'str_value'].map do |column_name|
+                                    ['num_value', 'bool_value', 'possible_value_id'].map do |column_name|
                                       if (present_value = single_property.try(column_name)).present?
                                         "product_properties.#{column_name}=#{present_value}"
                                       else
